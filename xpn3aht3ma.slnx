@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="KMDF_part/KMDF_part.vcxproj">
+    <Platform Project="x64" />
+    <Deploy />
+  </Project>
+  <Project Path="xpn3aht3ma/xpn3aht3ma.vcxproj" Id="259a61c0-8fa7-4f4f-bc72-22b8adb14ae0" />
+</Solution>
