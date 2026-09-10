@@ -1,0 +1,6 @@
+#include <ntddk.h>
+
+#pragma once
+
+#define IOCTL_XPN_PING \
+    CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
