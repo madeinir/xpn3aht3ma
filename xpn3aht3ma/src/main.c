@@ -1,7 +1,6 @@
 #include <windows.h>
 #include <stddef.h>
-
-#define IOCTL_XPN_PING CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#include "../../KMDF_part/src/Public.h"
 
 void main() {
 	LPCWSTR deviceName = L"\\\\.\\Kmd_xpn_Link";
