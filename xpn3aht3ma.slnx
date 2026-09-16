@@ -1,10 +1,15 @@
 <Solution>
   <Configurations>
+    <Platform Name="Any CPU" />
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
   <Project Path="KMDF_part/KMDF_part.vcxproj">
     <Platform Project="x64" />
     <Deploy />
+  </Project>
+  <Project Path="xpn3aht3ma_console/xpn3aht3ma_console.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="e8108df3-5492-4a5a-bd7a-d8d4a74b51ac">
+    <Platform Project="AnyCPU" />
+    <Build Project="false" />
   </Project>
 </Solution>
