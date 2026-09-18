@@ -118,8 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c" />
-    <ClCompile Include="src\xpnNetwork.c" />
     <ClCompile Include="src\xpnGUIDs.c" />
+    <ClCompile Include="src\xpnNetwork.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Public.h" />

@@ -1,6 +1,7 @@
 #include <guiddef.h>
 #define INITGUID
 #include <initguid.h>
+#include "Public.h"
 
 // {02E561B7-96DA-4B97-859B-FEED5A73411A}
 DEFINE_GUID(PROVIDER_GUID,
