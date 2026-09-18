@@ -126,20 +126,39 @@ NTSTATUS RegisterWfp(PDEVICE_OBJECT deviceObject)
 	if (!NT_SUCCESS(status)) return status;
 
 	//калауты ебать их в рот
-	FWPS_CALLOUT0 sCallout = { 0 };
-	sCallout.calloutKey = CALLOUT_GUID;
-	sCallout.classifyFn = XpnClassifyFn;
-	sCallout.notifyFn = XpnNotifyFn;
-	sCallout.flowDeleteFn = XpnFlowDeleteFn;
-	status = FwpsCalloutRegister0(deviceObject, &sCallout, &calloutId);
+	//1 на выходящие соединения
+	//2 на входящие
+	FWPS_CALLOUT0 sCallout_out = { 0 };
+	sCallout_out.calloutKey = CALLOUT_GUID;
+	sCallout_out.classifyFn = XpnClassifyFn;
+	sCallout_out.notifyFn = XpnNotifyFn;
+	sCallout_out.flowDeleteFn = XpnFlowDeleteFn;
+	status = FwpsCalloutRegister0(deviceObject, &sCallout_out, &calloutId);
 	if (!NT_SUCCESS(status)) return status;
 
-	FWPM_CALLOUT0 mCallout = { 0 };
-	mCallout.calloutKey = CALLOUT_GUID;
-	mCallout.displayData.name = L"XPN3AHT3MA_callout";
-	mCallout.applicableLayer = FWPM_LAYER_ALE_AUTH_CONNECT_V4;
-	status = FwpmCalloutAdd0(hEngine, &mCallout, NULL, NULL);
+	FWPM_CALLOUT0 mCallout_out = { 0 };
+	mCallout_out.calloutKey = CALLOUT_GUID;
+	mCallout_out.displayData.name = L"XPN3AHT3MA_callout";
+	mCallout_out.applicableLayer = FWPM_LAYER_ALE_AUTH_CONNECT_V4;
+	status = FwpmCalloutAdd0(hEngine, &mCallout_out, NULL, NULL);
 	if (!NT_SUCCESS(status)) return status;
+
+	/*
+	FWPS_CALLOUT0 sCallout_in = {0};
+	sCallout_in.calloutKey = IN_CALLOUT_GUID;
+	sCallout_in.classifyFn = XpnClassifyFn;
+	sCallout_in.notifyFn = XpnNotifyFn;
+	sCallout_in.flowDeleteFn = XpnFlowDeleteFn;
+	status = FwpsCalloutRegister0(deviceObject, &sCallout_in, &calloutId);
+	if (!NT_SUCCESS(status)) return status;
+
+	FWPM_CALLOUT0 mCallout_in = { 0 };
+	mCallout_in.calloutKey = IN_CALLOUT_GUID;
+	mCallout_in.displayData.name = L"XPN3AHT3MA_callout";
+	mCallout_in.applicableLayer = FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4;
+	status = FwpmCalloutAdd0(hEngine, &mCallout_in, NULL, NULL);
+	if (!NT_SUCCESS(status)) return status;
+	*/
 
 	FWPM_FILTER0 filter = { 0 };
 	filter.displayData.name = L"XPN3AHT3MA_filter";

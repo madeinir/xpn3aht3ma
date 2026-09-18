@@ -1,3 +1,5 @@
+#pragma once
+
 #include <ntddk.h>
 #define NDIS_SUPPORT_NDIS6 1
 #include <ndis.h> 
@@ -17,3 +19,4 @@ extern const GUID PROVIDER_GUID;
 extern const GUID SUBLAYER_GUID;
 extern const GUID CALLOUT_GUID;
 extern const GUID FILTER_GUID;
+extern const GUID IN_CALLOUT_GUID;
