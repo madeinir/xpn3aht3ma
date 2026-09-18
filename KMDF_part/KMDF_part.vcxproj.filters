@@ -27,11 +27,14 @@
     <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\xpnNetwork.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xpnGUIDs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ioctl_codes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Public.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -89,7 +89,11 @@
     <ClCompile>
       <LanguageStandard_C>Default</LanguageStandard_C>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>fwpkclnt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DriverSign>
@@ -114,9 +118,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\xpnNetwork.c" />
+    <ClCompile Include="src\xpnGUIDs.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ioctl_codes.h" />
     <ClInclude Include="src\Public.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

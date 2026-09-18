@@ -1,6 +1,10 @@
-#pragma once
-
 #include <ntddk.h>
+#define NDIS_SUPPORT_NDIS6 1
+#include <ndis.h> 
+#include <wdf.h>
+#include <fwpmk.h>
+#include <fwpsk.h>
+#include <wdfcontrol.h>
 
 
 #define IOCTL_XPN_PING \
